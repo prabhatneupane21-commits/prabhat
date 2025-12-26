@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Music Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    h1 {
+      color: goldenrod;
+      font-size: 48px;
+      text-shadow: 2px 2px 4px #000000;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    p {
+      color: darkkhaki;
+      font-size: 24px;
+      text-shadow: 1px 1px 2px #000000;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1; /* Send video behind content */
+      object-fit: cover; /* Crop/scale to fill screen */
+    }
+     #login-btn {
+      position: fixed;   /* stays at bottom even when scrolling */
+      bottom: 30px;      /* distance from bottom */
+      left: 50%;         /* start at middle */
+      transform: translateX(-50%); /* perfectly center */
+      background-color: transparent;
+      font-size: 18px;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px ;
+         animation: blink 1s infinite;
+    }
+     @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+
+    #login-btn:hover {
+      background: #286ab6;
+    }
+ #play-btn {
+      position: fixed;   /* stays at bottom even when scrolling */
+   
+      transform: translateX(-50%); /* perfectly center */
+      background-color:transparent ;
+      font-size: 15px;
+      padding:10px 12px;
+      border-radius: 12px;
+      left: 40%;
+
+    }
+
+    
+  #off-btn {
+        position: fixed;   /* stays at bottom even when scrolling */
+    
+        transform: translateX(-50%); /* perfectly center */
+        background-color:transparent;
+        font-size: 15px;
+        padding:10px 12px;
+        border-radius: 12px;
+        right: 30%;
+  
+      }
+   
+
+
+  </style>
+</head>
+<body>
+ 
+
+ <h1>Welcome to Free Fire </h1>
+ <p> Free Fire Battel in Style</p>
+
+ <video id="bg-video" autoplay muted loop>
+    <source src="free.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Play Button -->
+  <button id="play-btn" onclick="playMusic()">Play Music</button>
+
+  <button id="off-btn" onclick="offMusic()">Off Music</button>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="freefire.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.play();
+    }
+  </script>
+    <script>
+    function offMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.pause();
+  
+    }
+    
+    </script>
+  
+    
+    <button id="login-btn" onclick="window.location.href='calculator.html'">login with facebook</button>
+
+</body>
+</html>
